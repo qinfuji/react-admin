@@ -6,8 +6,6 @@ export default [
     routes: [
       { path: '/user', redirect: '/user/login' },
       { path: '/user/login', component: './User/Login' },
-      { path: '/user/register', component: './User/Register' },
-      { path: '/user/register-result', component: './User/RegisterResult' },
     ],
   },
   // app
@@ -15,20 +13,36 @@ export default [
     path: '/',
     component: '../layouts/BasicLayout',
     Routes: ['src/pages/Authorized'],
-    authority: ['admin', 'user'],
+    authority: 'home',
     routes: [
       // dashboard
-      { path: '/', redirect: '/dashboard/analysis' },
+      { path: '/', redirect: '/home' },
+      {
+        path: '/home',
+        name: 'home',
+        icon: 'home',
+        component: './Dashboard/Analysis',
+        authority: 'home',
+      },
       {
         path: '/dashboard',
         name: 'dashboard',
         icon: 'dashboard',
+        authority: 'dashboard',
         routes: [
           {
-            path: '/dashboard/analysis',
-            name: 'analysis',
-            component: './Dashboard/Analysis',
+            path: '/dashboard/mapshow',
+            name: 'mapshow',
+            component: './Dashboard/MapShow',
+            authority: 'dashboard/mapshow',
           },
+          {
+            path: '/dashboard/listshow',
+            name: 'listshow',
+            component: './Dashboard/ListShow',
+            authority: 'dashboard/listshow',
+          },
+          /*
           {
             path: '/dashboard/monitor',
             name: 'monitor',
@@ -39,23 +53,26 @@ export default [
             name: 'workplace',
             component: './Dashboard/Workplace',
           },
+          */
         ],
       },
-
       {
         path: '/datamanager',
         name: 'datamanager',
         icon: 'database',
+        authority: 'datamanager',
         routes: [
           {
             path: '/datamanager/datapush',
             name: 'datapush',
             component: './DataManager/PushData',
+            authority: 'datamanager/datapush',
           },
           {
             path: '/datamanager/historyrecord',
             name: 'historyrecord',
             component: './DataManager/HistoryRecord',
+            authority: 'datamanager/historyrecord',
           },
         ],
       },
@@ -64,26 +81,31 @@ export default [
         path: '/devicemanager',
         name: 'devicemanager',
         icon: 'usb',
+        authority: 'devicemanager',
         routes: [
           {
             path: '/devicemanager/devicelist',
             name: 'devicelist',
             component: './DeviceManager/DeviceList',
+            authority: 'devicemanager/devicelist',
           },
           {
             path: '/devicemanager/adddevice',
             name: 'adddevice',
             component: './DeviceManager/AddDevice',
+            authority: 'devicemanager/adddevice',
           },
           {
             path: '/devicemanager/devicegroup',
             name: 'devicegroup',
             component: './DeviceManager/DeviceGroup',
+            authority: 'devicemanager/devicegroup',
           },
           {
             path: '/devicemanager/cyclemanager',
             name: 'cyclemanager',
             component: './DeviceManager/CycleManager',
+            authority: 'devicemanager/cyclemanager',
           },
         ],
       },
@@ -92,28 +114,31 @@ export default [
         path: '/triggermanager',
         name: 'triggermanager',
         icon: 'tool',
-        //authority: 'triggermanager',
+        authority: 'triggermanager',
         routes: [
           {
             path: '/triggermanager/triggerlist',
             name: 'triggerlist',
             component: './TriggerManager/TriggerList',
-            authority: 'triggermanager_triggerlist',
+            authority: 'triggermanager/triggerlist',
           },
           {
             path: '/triggermanager/addtrigger',
             name: 'addtrigger',
             component: './TriggerManager/AddTrigger',
+            authority: 'triggermanager/addtrigger',
           },
           {
             path: '/triggermanager/alarmcontact',
             name: 'alarmcontact',
             component: './TriggerManager/AlarmContact',
+            authority: 'triggermanager/alarmcontact',
           },
           {
             path: '/triggermanager/alarmrecord',
             name: 'alarmrecord',
             component: './TriggerManager/AlarmRecord',
+            authority: 'triggermanager/alarmrecord',
           },
         ],
       },
@@ -122,26 +147,31 @@ export default [
         path: '/useradmin',
         name: 'useradmin',
         icon: 'user',
+        authority: 'useradmin',
         routes: [
           {
             path: '/useradmin/usermanager',
             name: 'usermanager',
             component: './UserAdmin/UserManager',
+            authority: 'useradmin/usermanager',
           },
           {
             path: '/useradmin/rolemanager',
             name: 'rolemanager',
             component: './UserAdmin/RoleManager',
+            authority: 'useradmin/rolemanager',
           },
           {
             path: '/useradmin/groupmanager',
             name: 'groupmanager',
             component: './UserAdmin/GroupManager',
+            authority: 'useradmin/groupmanager',
           },
         ],
       },
 
       // forms
+      /*
       {
         path: '/form',
         icon: 'form',
@@ -354,7 +384,7 @@ export default [
             ],
           },
         ],
-      },
+      },*/
       {
         component: '404',
       },

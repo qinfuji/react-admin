@@ -73,6 +73,8 @@ export default {
   'menu.dashboard.analysis': '分析页',
   'menu.dashboard.monitor': '监控页',
   'menu.dashboard.workplace': '工作台',
+  'menu.dashboard.mapshow': '地图展现',
+  'menu.dashboard.listshow': '列表展现',
 
   'menu.datamanager': '数据管理',
   'menu.datamanager.datapush': '数据推送',
