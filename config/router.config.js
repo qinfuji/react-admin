@@ -170,6 +170,30 @@ export default [
         ],
       },
 
+      {
+        path: '/examples',
+        name: 'examples',
+        icon: 'code-sandbox',
+        routes: [
+          {
+            path: '/examples/form',
+            icon: 'form',
+            name: 'form',
+            routes: [
+              {
+                path: '/examples/form/basic-form',
+                name: 'basicform',
+                component: './Examples/Forms/BasicForm',
+              },
+              {
+                path: '/examples/form/advanced-form',
+                name: 'advancedform',
+                component: './Examples/Forms/AdvancedForm',
+              },
+            ],
+          },
+        ],
+      },
       // forms
       /*
       {

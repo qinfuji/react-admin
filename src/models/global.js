@@ -4,6 +4,7 @@ export default {
   namespace: 'global',
 
   state: {
+    currentModal: null, //当前对话框
     collapsed: false,
     notices: [],
   },
@@ -34,6 +35,20 @@ export default {
   },
 
   reducers: {
+    openModal(state, { payload }) {
+      return {
+        ...state,
+        currentModal: payload,
+      };
+    },
+
+    closeModal(state) {
+      return {
+        ...state,
+        currentModal: null,
+      };
+    },
+
     changeLayoutCollapsed(state, { payload }) {
       return {
         ...state,

@@ -97,13 +97,17 @@ export default {
   'menu.useradmin.rolemanager': '角色管理',
   'menu.useradmin.groupmanager': '机构管理',
 
-  'menu.form': '表单页',
-  'menu.form.basicform': '基础表单',
+  'menu.examples': '演示代码',
+
+  'menu.examples.form': '表单页',
+  'menu.examples.form.basicform': '基础表单',
   'menu.form.stepform': '分步表单',
   'menu.form.stepform.info': '分步表单（填写转账信息）',
   'menu.form.stepform.confirm': '分步表单（确认转账信息）',
   'menu.form.stepform.result': '分步表单（完成）',
-  'menu.form.advancedform': '高级表单',
+  'menu.form.stepform': '分步表单',
+  'menu.examples.form.advancedform': '高级表单',
+
   'menu.list': '列表页',
   'menu.list.searchtable': '查询表格',
   'menu.list.basiclist': '标准列表',
