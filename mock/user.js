@@ -73,22 +73,45 @@ export default {
   ],
   'POST /api/login/account': (req, res) => {
     const { password, userName, type } = req.body;
-    if (password === 'ant.design' && userName === 'admin') {
+    console.log(' password, userName', password, userName);
+    if (password === 'password' && userName === 'admin') {
       res.send({
         status: 'ok',
         type,
-        currentAuthority: 'admin',
+        currentAuthority: [
+          'home',
+          'dashboard',
+          'dashboard/mapshow',
+          'dashboard/listshow',
+          'datamanager',
+          'datamanager/datapush',
+          'datamanager/historyrecord',
+          'devicemanager',
+          'devicemanager/devicelist',
+          'devicemanager/adddevice',
+          'devicemanager/devicegroup',
+          'devicemanager/cyclemanager',
+          'triggermanager',
+          'triggermanager/triggerlist',
+          'triggermanager/addtrigger',
+          'triggermanager/alarmcontact',
+          'triggermanager/alarmrecord',
+          'useradmin',
+          'useradmin/usermanager',
+          'useradmin/rolemanager',
+          'useradmin/groupmanager',
+        ],
       });
       return;
     }
-    if (password === 'ant.design' && userName === 'user') {
-      res.send({
-        status: 'ok',
-        type,
-        currentAuthority: 'user',
-      });
-      return;
-    }
+    // if (password === 'ant.design' && userName === 'user') {
+    //   res.send({
+    //     status: 'ok',
+    //     type,
+    //     currentAuthority: 'user',
+    //   });
+    //   return;
+    // }
     res.send({
       status: 'error',
       type,
