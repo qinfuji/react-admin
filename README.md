@@ -36,3 +36,7 @@
 ### 参考实现
     项目将原有ant design pro的demo文件全部迁移到src/Examples下，可以参考一下的文件实现
     增加了OpenDomal的功能，演示了通用对话框的实现，如果需要通用对话框可以参考实现。
+
+### 技术文档
+    [ant design pro 2](https://pro.ant.design/docs/graph-cn)
+    [Ant Design of React](https://ant.design/docs/react/introduce-cn)
