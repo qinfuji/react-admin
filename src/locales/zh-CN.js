@@ -133,6 +133,7 @@ export default {
   'menu.examples.modalexamples.example1': '示例1',
 
   'menu.examples.exception.trigger': '测试',
+  'menu.account.logout': '退出登录',
 
   'app.login.message-invalid-credentials': '账户或密码错误（admin/ant.design）',
   'app.login.message-invalid-verification-code': '验证码错误',
