@@ -129,6 +129,11 @@ export default {
   'menu.examples.exception.not-find': '404',
   'menu.examples.exception.server-error': '500',
 
+  'menu.examples.modalexamples': '对话框操作',
+  'menu.examples.modalexamples.example1': '示例1',
+
+  'menu.examples.exception.trigger': '测试',
+
   'app.login.message-invalid-credentials': '账户或密码错误（admin/ant.design）',
   'app.login.message-invalid-verification-code': '验证码错误',
   'app.login.tab-login-credentials': '账户密码登录',

@@ -1,4 +1,5 @@
 import { queryNotices } from '@/services/api';
+import { changeConfirmLocale } from 'antd/lib/modal/locale';
 
 export default {
   namespace: 'global',
@@ -36,6 +37,7 @@ export default {
 
   reducers: {
     openModal(state, { payload }) {
+      //console.log('---->');
       return {
         ...state,
         currentModal: payload,

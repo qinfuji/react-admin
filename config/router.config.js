@@ -301,6 +301,19 @@ export default [
               },
             ],
           },
+          {
+            name: 'modalexamples',
+            icon: 'warning',
+            path: '/examples/modalexamples',
+            routes: [
+              // exception
+              {
+                path: '/examples/modalexamples/examples',
+                name: 'example1',
+                component: './Examples/OpenModal/Example1',
+              },
+            ],
+          },
         ],
       },
       {

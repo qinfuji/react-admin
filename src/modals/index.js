@@ -1,9 +1,11 @@
 import React, { PureComponent } from 'react';
 import Modal from '@components/Modal';
 
+import Modal1 from './examples/Modal1';
+
 const modals = {
-  preferences: {
-    Component: PreferencesModal,
+  modal1: {
+    Component: Modal1,
     width: 900,
   },
 };
