@@ -6,6 +6,7 @@ export default {
 
   state: {
     currentModal: null, //当前对话框
+    currentModalData: null, //当前对话框数据
     collapsed: false,
     notices: [],
   },
@@ -37,10 +38,10 @@ export default {
 
   reducers: {
     openModal(state, { payload }) {
-      //console.log('---->');
       return {
         ...state,
-        currentModal: payload,
+        currentModal: payload.modal,
+        currentModalData: payload.data,
       };
     },
 
@@ -48,6 +49,7 @@ export default {
       return {
         ...state,
         currentModal: null,
+        currentModalData: null,
       };
     },
 

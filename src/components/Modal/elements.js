@@ -1,16 +1,15 @@
-import styled, { injectGlobal } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const CLOSE_TIMEOUT_MS = 300;
 
 export const applyGlobalStyles = () => {
   // eslint-disable-next-line
-  injectGlobal`
+  createGlobalStyle`
   .ReactModal__Content {
     transition: all ${CLOSE_TIMEOUT_MS}ms ease;
     transition-property: opacity, transform;
     opacity: 0;
     transform: scale(0.9) translateY(5px);
-
     h2 {
       margin-top: 14px;
     }
@@ -50,20 +49,23 @@ export const applyGlobalStyles = () => {
 };
 
 export const BaseModal = styled.div`
-  background-color: ${props => props.theme.background3};
+  background-color: #fff;
 `;
 
 export const ModalTitle = styled.h1`
-  background-color: ${props => props.theme.secondary};
-  color: white;
-  padding: 1rem;
+  background-color: #fff;
+  color: #52c41a;
+  padding: 0.4rem;
+  padding-left: 1rem;
   margin: 0;
-  font-size: 1.25rem;
-  text-align: center;
+  font-size: 1rem;
+  text-align: left;
+  font-weight: bold;
   background-image: linear-gradient(-225deg, #31b0ff 0%, #47a8e5 100%);
 `;
 
 export const ModalBody = styled.div`
   background-color: white;
   color: black;
+  min-height: 150px;
 `;

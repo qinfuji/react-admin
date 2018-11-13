@@ -1,16 +1,9 @@
 import React from 'react';
 import Modal from 'react-modal';
 
-import {
-  CLOSE_TIMEOUT_MS,
-  applyGlobalStyles,
-  BaseModal,
-  ModalTitle,
-  ModalBody,
-} from './elements';
+import { CLOSE_TIMEOUT_MS, applyGlobalStyles, BaseModal, ModalTitle, ModalBody } from './elements';
 
 Modal.setAppElement('#root');
-
 applyGlobalStyles();
 
 class ModalComponent extends React.Component {
@@ -38,7 +31,6 @@ class ModalComponent extends React.Component {
 
   render() {
     const { isOpen, width, top, onClose, children, title } = this.props;
-
     return (
       <Modal
         isOpen={isOpen}

@@ -1,11 +1,18 @@
 import React, { PureComponent } from 'react';
-import Modal from '@components/Modal';
+import { connect } from 'dva';
+import Modal from '@/components/Modal';
 
-import Modal1 from './examples/Modal1';
+import GlobalModal from './examples/Modal';
+import ModuleModal from '../pages/Examples/OpenModal/modals/Modal';
 
 const modals = {
-  modal1: {
-    Component: Modal1,
+  globalModal: {
+    Component: GlobalModal,
+    width: 900,
+  },
+
+  moduleModal: {
+    Component: ModuleModal,
     width: 900,
   },
 };
@@ -27,16 +34,19 @@ class Modals extends PureComponent {
   }
 
   render() {
-    const modal = global.currentModal && modals[global.currentModal];
+    const { currentModal, currentModalData } = this.props.global;
+    const modal = currentModal && modals[currentModal];
     return (
       <Modal
         isOpen={Boolean(modal)}
         width={modal && modal.width}
+        title={modal && modal.title}
         onClose={isKeyDown => this.modalClose({ isKeyDown })}
       >
         {modal
           ? React.createElement(modal.Component, {
               closeModal: () => this.modalClose({ isKeyDown: false }),
+              modalParams: currentModalData,
             })
           : null}
       </Modal>

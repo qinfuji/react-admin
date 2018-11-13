@@ -1,21 +1,33 @@
 import React, { Component } from 'react';
-import Modal from '@/components/Modal';
 import { connect } from 'dva';
 
-@connect(({ global /*, loading*/ }) => ({
-  //submitting: loading.effects['form/submitRegularForm'],
+@connect(({ global }) => ({
+  global,
 }))
 class Example1 extends Component {
-  openMadal() {
+  openGlobalModal() {
     const { dispatch } = this.props;
-    console.log('----', dispatch);
     dispatch({
       type: 'global/openModal',
-      payload: 'modal1',
+      payload: { modal: 'globalModal', data: { message: '我是全局对话框参数' } },
     });
   }
+
+  openModuleModal() {
+    const { dispatch } = this.props;
+    dispatch({
+      type: 'global/openModal',
+      payload: { modal: 'moduleModal', data: { message: '我是模块内对话框参数' } },
+    });
+  }
+
   render() {
-    return <button onClick={this.openMadal.bind(this)}>open dialog</button>;
+    return (
+      <React.Fragment>
+        <button onClick={this.openGlobalModal.bind(this)}>打开全局对话框</button>
+        <button onClick={this.openModuleModal.bind(this)}>打开模块内对话框</button>
+      </React.Fragment>
+    );
   }
 }
 

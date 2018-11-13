@@ -9,7 +9,6 @@ const renderAuthorize = Authorized => currentAuthority => {
     if (typeof currentAuthority === 'function') {
       CURRENT = currentAuthority();
     }
-    console.log('CURRENT', CURRENT);
     if (
       Object.prototype.toString.call(currentAuthority) === '[object String]' ||
       Array.isArray(currentAuthority)

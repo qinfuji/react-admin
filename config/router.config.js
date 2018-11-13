@@ -308,7 +308,7 @@ export default [
             routes: [
               // exception
               {
-                path: '/examples/modalexamples/examples',
+                path: '/examples/modalexamples/examples1',
                 name: 'example1',
                 component: './Examples/OpenModal/Example1',
               },
