@@ -192,223 +192,117 @@ export default [
               },
             ],
           },
-        ],
-      },
-      // forms
-      /*
-      {
-        path: '/form',
-        icon: 'form',
-        name: 'form',
-        routes: [
           {
-            path: '/form/basic-form',
-            name: 'basicform',
-            component: './Forms/BasicForm',
-          },
-          {
-            path: '/form/step-form',
-            name: 'stepform',
-            component: './Forms/StepForm',
-            hideChildrenInMenu: true,
+            path: '/examples/list',
+            icon: 'table',
+            name: 'list',
             routes: [
               {
-                path: '/form/step-form',
-                redirect: '/form/step-form/info',
+                path: '/examples/list/table-list',
+                name: 'searchtable',
+                component: './Examples/List/TableList',
               },
               {
-                path: '/form/step-form/info',
-                name: 'info',
-                component: './Forms/StepForm/Step1',
+                path: '/examples/list/basic-list',
+                name: 'basiclist',
+                component: './Examples/List/BasicList',
               },
               {
-                path: '/form/step-form/confirm',
-                name: 'confirm',
-                component: './Forms/StepForm/Step2',
+                path: '/examples/list/card-list',
+                name: 'cardlist',
+                component: './Examples/List/CardList',
               },
               {
-                path: '/form/step-form/result',
-                name: 'result',
-                component: './Forms/StepForm/Step3',
+                path: '/examples/list/search',
+                name: 'searchlist',
+                component: './Examples/List/List',
+                routes: [
+                  {
+                    path: '/examples/list/search',
+                    redirect: '/examples/list/search/articles',
+                  },
+                  {
+                    path: '/examples/list/search/articles',
+                    name: 'articles',
+                    component: './Examples/List/Articles',
+                  },
+                  {
+                    path: '/examples/list/search/projects',
+                    name: 'projects',
+                    component: './Examples/List/Projects',
+                  },
+                  {
+                    path: '/examples/list/search/applications',
+                    name: 'applications',
+                    component: './Examples/List/Applications',
+                  },
+                ],
               },
             ],
           },
           {
-            path: '/form/advanced-form',
-            name: 'advancedform',
-            authority: ['admin'],
-            component: './Forms/AdvancedForm',
-          },
-        ],
-      },
-      // list
-      {
-        path: '/list',
-        icon: 'table',
-        name: 'list',
-        routes: [
-          {
-            path: '/list/table-list',
-            name: 'searchtable',
-            component: './List/TableList',
-          },
-          {
-            path: '/list/basic-list',
-            name: 'basiclist',
-            component: './List/BasicList',
-          },
-          {
-            path: '/list/card-list',
-            name: 'cardlist',
-            component: './List/CardList',
-          },
-          {
-            path: '/list/search',
-            name: 'searchlist',
-            component: './List/List',
+            path: '/examples/profile',
+            name: 'profile',
+            icon: 'profile',
             routes: [
+              // profile
               {
-                path: '/list/search',
-                redirect: '/list/search/articles',
+                path: '/examples/profile/basic',
+                name: 'basic',
+                component: './Examples/Profile/BasicProfile',
               },
               {
-                path: '/list/search/articles',
-                name: 'articles',
-                component: './List/Articles',
+                path: '/examples/profile/advanced',
+                name: 'advanced',
+                component: './Examples/Profile/AdvancedProfile',
+              },
+            ],
+          },
+          {
+            name: 'result',
+            icon: 'check-circle-o',
+            path: '/examples/result',
+            routes: [
+              // result
+              {
+                path: '/examples/result/success',
+                name: 'success',
+                component: './Examples/Result/Success',
+              },
+              { path: '/examples/result/fail', name: 'fail', component: './Examples/Result/Error' },
+            ],
+          },
+          {
+            name: 'exception',
+            icon: 'warning',
+            path: '/examples/exception',
+            routes: [
+              // exception
+              {
+                path: '/examples/exception/403',
+                name: 'not-permission',
+                component: './Exception/403',
               },
               {
-                path: '/list/search/projects',
-                name: 'projects',
-                component: './List/Projects',
+                path: '/examples/exception/404',
+                name: 'not-find',
+                component: './Exception/404',
               },
               {
-                path: '/list/search/applications',
-                name: 'applications',
-                component: './List/Applications',
+                path: '/examples/exception/500',
+                name: 'server-error',
+                component: './Exception/500',
+              },
+              {
+                path: '/examples/exception/trigger',
+                name: 'trigger',
+                hideInMenu: true,
+                component: './Exception/TriggerException',
               },
             ],
           },
         ],
       },
-      {
-        path: '/profile',
-        name: 'profile',
-        icon: 'profile',
-        routes: [
-          // profile
-          {
-            path: '/profile/basic',
-            name: 'basic',
-            component: './Profile/BasicProfile',
-          },
-          {
-            path: '/profile/advanced',
-            name: 'advanced',
-            authority: ['admin'],
-            component: './Profile/AdvancedProfile',
-          },
-        ],
-      },
-      {
-        name: 'result',
-        icon: 'check-circle-o',
-        path: '/result',
-        routes: [
-          // result
-          {
-            path: '/result/success',
-            name: 'success',
-            component: './Result/Success',
-          },
-          { path: '/result/fail', name: 'fail', component: './Result/Error' },
-        ],
-      },
-      {
-        name: 'exception',
-        icon: 'warning',
-        path: '/exception',
-        routes: [
-          // exception
-          {
-            path: '/exception/403',
-            name: 'not-permission',
-            component: './Exception/403',
-          },
-          {
-            path: '/exception/404',
-            name: 'not-find',
-            component: './Exception/404',
-          },
-          {
-            path: '/exception/500',
-            name: 'server-error',
-            component: './Exception/500',
-          },
-          {
-            path: '/exception/trigger',
-            name: 'trigger',
-            hideInMenu: true,
-            component: './Exception/TriggerException',
-          },
-        ],
-      },
-      {
-        name: 'account',
-        icon: 'user',
-        path: '/account',
-        routes: [
-          {
-            path: '/account/center',
-            name: 'center',
-            component: './Account/Center/Center',
-            routes: [
-              {
-                path: '/account/center',
-                redirect: '/account/center/articles',
-              },
-              {
-                path: '/account/center/articles',
-                component: './Account/Center/Articles',
-              },
-              {
-                path: '/account/center/applications',
-                component: './Account/Center/Applications',
-              },
-              {
-                path: '/account/center/projects',
-                component: './Account/Center/Projects',
-              },
-            ],
-          },
-          {
-            path: '/account/settings',
-            name: 'settings',
-            component: './Account/Settings/Info',
-            routes: [
-              {
-                path: '/account/settings',
-                redirect: '/account/settings/base',
-              },
-              {
-                path: '/account/settings/base',
-                component: './Account/Settings/BaseView',
-              },
-              {
-                path: '/account/settings/security',
-                component: './Account/Settings/SecurityView',
-              },
-              {
-                path: '/account/settings/binding',
-                component: './Account/Settings/BindingView',
-              },
-              {
-                path: '/account/settings/notification',
-                component: './Account/Settings/NotificationView',
-              },
-            ],
-          },
-        ],
-      },*/
       {
         component: '404',
       },
